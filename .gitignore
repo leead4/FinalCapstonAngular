@@ -1,0 +1,10 @@
+lib/node_modules
+
+dist
+/app/values/keys.js
+app/values/keys.js
+
+lib/bower_components
+app/values/fb-creds.js
+
+.DS_Store

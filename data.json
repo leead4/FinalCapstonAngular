@@ -1,0 +1,41 @@
+{  
+   "guides":[  
+      {  
+         "type":"city",
+         "title":"Paris on $10 a Day"
+      },
+      {  
+         "type":"city",
+         "title":"Venice: Canals and Stuff"
+      },
+      {  
+         "type":"city",
+         "title":"Visiting Hoboken: Why?"
+      },
+      {  
+         "type":"country",
+         "title":"Touring Brazil's Empty Olympic Stadiums"
+      },
+      {  
+         "type":"country",
+         "title":"'Murica: Only Commies Travel Abroad"
+      },
+      {  
+         "type":"country",
+         "title":"Australia: Every Animal Here Can Kill You"
+      },
+      {  
+         "type":"region",
+         "title":"Backpacking Europe on Two Showers a Week"
+      },
+      {  
+         "type":"region",
+         "title":"Rainforests of Cental America"
+      },
+      {  
+         "type":"region",
+         "title":"The Evil Genius Guide to Taking over the Tri City Area"
+      }
+   ]
+}
+
