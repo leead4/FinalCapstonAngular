@@ -15,41 +15,30 @@ app.controller("HomeCtrl", function($scope, $route, $document, $routeParams, $wi
 	$scope.sendThatFile = function(){
                var file = $scope.myFile;
                
-               console.log('file is ' );
+               console.log('file is ', file);
                console.dir(file);
+               console.log("name", file.name)
                
-               var uploadUrl = "http://localhost:8000/upload/";
+               var uploadUrl = "http://127.0.0.1:8000/upload/";
 
 
 		// DocStorage.uploadFile().then(function(comeback){
 		FileUpload.uploadFileToUrl(file, uploadUrl).then(function(stuff){
+			console.log(stuff);
+			console.log(typeof(stuff));
+			console.log("mewo", Object.keys(stuff));
+			let meow = stuff.data
+			console.log("panda", meow);
 
 			console.log("we sent it!");
+
 			$window.location.href = "#!/deck";
-			$scope.apply();
+			// $scope.apply();
 		});
 			// $scope.apply();
 		// });
 	};
 
-	// myApp.controller('myCtrl', ['$scope', 'fileUpload', function($scope, fileUpload){
- //            $scope.uploadFile = function(){
- //               var file = $scope.myFile;
-               
- //               console.log('file is ' );
- //               console.dir(file);
-               
- //               var uploadUrl = "/fileUpload";
- //               fileUpload.uploadFileToUrl(file, uploadUrl);
- //            };
- //         }]);
-
-
-
-
-
-
-
-
+	
 
 });
