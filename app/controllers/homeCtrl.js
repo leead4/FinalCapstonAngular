@@ -1,14 +1,7 @@
 "use strict";
 
-app.controller("HomeCtrl", function($scope, $route, $document, $routeParams, $window, $location, DocStorage, FileUpload){
+app.controller("HomeCtrl", function($scope, $route, $document, $routeParams, $window, $location, DocStorage, LocalFactory, FileUpload){
 
-	// $scope.textObject = {
-	// 	file: '',
-	// 	file_path: '' 
-	// };
-
-	// let doc = 'txt.txt'
-	// let doc_path = '/assets/text.txt'
 
 		
 
@@ -28,15 +21,14 @@ app.controller("HomeCtrl", function($scope, $route, $document, $routeParams, $wi
 			console.log(typeof(stuff));
 			console.log("mewo", Object.keys(stuff));
 			let meow = stuff.data
-			console.log("panda", meow);
+			let meowMix = JSON.parse(meow)
+			// console.log("panda", meow);
+			LocalFactory.setCurrentJSON(meowMix);
 
 			console.log("we sent it!");
 
 			$window.location.href = "#!/deck";
-			// $scope.apply();
 		});
-			// $scope.apply();
-		// });
 	};
 
 	

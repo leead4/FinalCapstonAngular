@@ -7,9 +7,22 @@
 
 </head>
 <body ng-app="FlashCards">
-<h1>hey gurl</h1>
-<!-- <div ng-include="nav.html"></div> -->
+<nav class="z-depth-0">
+ 
+    <div class="nav-wrapper fixed z-depth-0" ng-controller="NavCtrl"> 
+    <a href="#!" class="brand-logo center">
+    flashcards</a>
+    <ul class="left">
+      <li >
+     <!--  -->
+        
 
+      <a href="#!/">view your decks</a></li>
+      
+    </ul>
+    </div>
+</nav>
+<h1>hey gurl</h1>
 
 <div class="container" ng-view>
 	
@@ -49,9 +62,9 @@
 <script type="text/javascript" src="app/factories/docFactory.js"></script>
 
 <script type="text/javascript" src="app/factories/filterFactory.js"></script>
+<script type="text/javascript" src="/app/factories/localFactory.js"></script>
 <!-- services -->
 <script type="text/javascript" src="/app/services/fileSevice.js"></script>
-
 
 <!-- directive  -->
 <script type="text/javascript" src="/app/directives/fileDirective.js"></script>

@@ -11,7 +11,6 @@ app.service('FileUpload', function ($http, $q){
                     method: "POST",
                     data: fd,
                     headers: {
-                     
                       'Content-Type': 'multipart/form-data',
                       'Content-Disposition': 'attachment; filename=upload.txt'
                     },
@@ -28,7 +27,7 @@ app.service('FileUpload', function ($http, $q){
                         return formData;
                     }
                   })
-                  .then((djangostuff) => {
+                  .then((djangostuff) => {                    
                     resolve(djangostuff);
                   })
             .catch((error) => {

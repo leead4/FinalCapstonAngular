@@ -1,15 +1,6 @@
 "use strict";
 
-app.controller("CardCtrl", function($scope, $route, $document, $routeParams, $window, $location){
-
-
-
-
-
-
-
-
-
+app.controller("NavCtrl", function($scope, $route, $document, $routeParams, $window, $location){
 
 
 });

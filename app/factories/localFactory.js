@@ -2,7 +2,7 @@
 
 app.factory("LocalFactory", () =>{
 
-
+	let currentJSON = {};
 	let currentCard = {};
 	let currentDeck = {};
 	let currentCardList = {};
@@ -13,6 +13,14 @@ app.factory("LocalFactory", () =>{
 
 	let setCurrentCard = (something) => {
 		currentCard = something;
+	};
+	
+	let getCurrentJSON = () => {
+		return currentJSON;
+	};
+
+	let setCurrentJSON = (something) => {
+		currentJSON = something;
 	};
 
 	let getCurrentDeck = () => {
@@ -34,6 +42,6 @@ app.factory("LocalFactory", () =>{
 	};
 
 
-return {};
+return {setCurrentCardList, getCurrentCardList,setCurrentDeck, getCurrentDeck, setCurrentJSON, getCurrentJSON, setCurrentCard, getCurrentCard};
 
 });
