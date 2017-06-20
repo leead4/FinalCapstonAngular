@@ -7,7 +7,17 @@
               <p>{{blob.object.text}}</p>
             </div>
             <div class="card-action">
-              <a href="#">save</a>
+ 
+              <!-- Dropdown Trigger -->
+            <a class='dropdown-button btn' href='' data-activates='demoDropdown{{blob.action.text}}' dropdown data-hover="true" ng-click ="openSesame()">
+            This is a dropdown
+            </a>
+
+        <!-- Dropdown Structure -->
+        <ul id='demoDropdown{{blob.action.text}}' class='dropdown-content' >
+        <li ng-repeat="deck in showMe"><a href="" ng-click="closeSesame()">{{deck}}</a></li>
+   
+        </ul>
               <a href="#">delete</a>
             </div>
           </div>

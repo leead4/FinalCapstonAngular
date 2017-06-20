@@ -3,8 +3,7 @@ app.service('FileUpload', function ($http, $q){
             this.uploadFileToUrl = function(file, uploadUrl){
                var fd = new FormData();
                fd.append('file', file);
-               console.log("fd values", fd.values)
-            
+               console.log("fd values", fd.values);            
                return $q((resolve, reject) => {
                   $http({
                     url: uploadUrl,
