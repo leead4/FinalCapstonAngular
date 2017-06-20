@@ -16,7 +16,8 @@ let getCards = () => {
 
     let postCard = (newCard) => {
         return $q((resolve, reject) => {
-            $http.post(`http://localhost:8000/cards`, 
+            console.log("we made it");
+            $http.post(`http://localhost:8000/createcard/`, 
             JSON.stringify(newCard))
             .then((djangoStuff) => {
                  resolve(djangoStuff);
@@ -53,7 +54,47 @@ let getCards = () => {
         });
     };
 
-return {getCards, postCard, getDecks, postDeck};	
+    let deleteCard = (cardId) => {
+        return $q((resolve, reject) => {
+            console.log('blabla', cardId);
+            $http.delete(`http://localhost:8000/deletethiscard/${cardId}/`)
+            .then((djangoStuff)=>{
+                resolve(djangoStuff);
+            })
+            .catch((error)=>{
+                reject(error);
+            });
+        });
+    };
+
+    let editCard = (cardId) => {
+        return $q((resolve, reject) => {
+            console.log('blabla', cardId);
+            $http.patch(`http://localhost:8000/editthiscard/${cardId}/`, JSON.stringify({
+                "card_front": "party","car_back" : "hat"}))
+            .then((djangoStuff)=>{
+                resolve(djangoStuff);
+            })
+            .catch((error)=>{
+                reject(error);
+            });
+        });
+    };
+
+    let getCardsInDeck = (deckStuff) => {
+        return $q((resolve, reject) => {
+            console.log("we in factory", deckStuff);
+            $http.get(`http://localhost:8000/getcardsindeck/${deckStuff}/`)
+            .then((djangoStuff) => {
+                 resolve(djangoStuff);
+            })
+            .catch((error) => {
+                reject(error);
+            });
+        });
+    }
+
+return {getCards, postCard, getDecks, deleteCard, postDeck, getCardsInDeck, editCard};	
 
 
 

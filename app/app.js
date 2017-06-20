@@ -9,8 +9,12 @@ app.config(function($routeProvider){
     templateUrl: 'partials/home.html',
     controller: "HomeCtrl"
   }).
-    when('/decklistview', {
-        templateUrl: 'partials/decklistview.html',
+    // when('/decklistview', {
+    //     templateUrl: 'partials/decklistview.html',
+    //     controller: "DeckListCtrl"
+    // }).
+    when('/decknameview/:deckname', {
+        templateUrl: 'partials/decknameview.html',
         controller: "DeckListCtrl"
     })
     .when('/deck', {

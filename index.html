@@ -10,14 +10,18 @@
 <nav class="z-depth-0">
  
     <div class="nav-wrapper fixed z-depth-0" ng-controller="NavCtrl"> 
-    <a href="#!" class="brand-logo center">
-    flashcards</a>
-    <ul class="left">
-      <li >
-     <!--  -->
-        
+   
+  
+   
+         <!-- Dropdown Trigger -->
+            <a class='dropdown-button btn' href='' data-activates='demoDropdown'  class="brand-logo center">
+            Go to a Deck
+            </a>
 
-      <a href="#!/decklist.html">view your decks</a></li>
+            <!-- Dropdown Structure -->
+            <ul id='demoDropdown' class='dropdown-content left' >
+              <li ng-repeat="deck in showMer"><a ng-click="goToThisDeck(deck.id)" >{{deck.name}}</a></li>
+
       
     </ul>
     </div>
@@ -66,11 +70,12 @@
 <!-- directive  -->
 <script type="text/javascript" src="/app/directives/fileDirective.js"></script>
 <!-- controllers -->
-<script type="text/javascript" src="app/controllers/deckListCtrl.js"></script>
+<script type="text/javascript" src="/app/controllers/deckListCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/cardCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/homeCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/deckCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/loginCtrl.js"></script>
+
 <script type="text/javascript" src="app/controllers/navCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/playCtrl.js"></script>
 
