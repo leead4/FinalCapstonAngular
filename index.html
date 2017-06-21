@@ -3,30 +3,35 @@
 <head>
 	<title>flashcards</title>
 <link rel="stylesheet" type="text/css" href="/lib/node_modules/materialize-css/dist/css/materialize.min.css">
-<link rel="stylesheet" type="text/css" href="styles/">
+
+<!-- <link rel="stylesheet" type="text/css" href="styles/style.css"> -->
 
 </head>
 <body ng-app="FlashCards">
-<nav class="z-depth-0">
- 
-    <div class="nav-wrapper fixed z-depth-0" ng-controller="NavCtrl"> 
-   
-  
-   
-         <!-- Dropdown Trigger -->
-            <a class='dropdown-button btn' href='' data-activates='demoDropdown'  class="brand-logo center">
-            Go to a Deck
-            </a>
 
-            <!-- Dropdown Structure -->
-            <ul id='demoDropdown' class='dropdown-content left' >
-              <li ng-repeat="deck in showMer"><a ng-click="goToThisDeck(deck.id)" >{{deck.name}}</a></li>
+
+    <ul id='dropdown1' class='dropdown-content' >
+    <li ng-repeat="deck in showMer">
+        <a ng-click="goToThisDeck(deck.id)" href="#!/decknameview/:{{deck.id}}">{{deck.name}}</a>
+              </li>
+    </ul>
+<nav class="z-depth-0">
+  <div class="nav-wrapper" ng-controller="NavCtrl">
+    
+   <ul class="left hide-on-med-and-down">
+      <li><a href="#!/">Home</a></li>
+      
+    <li>
+      <a class="dropdown-button" href="" data-activates="dropdown1">Dropdown</a></li>
+
+    </ul>
 
       
-    </ul>
+    </ul> 
+   
     </div>
 </nav>
-<h1>hey gurl</h1>
+
 
 <div class="container" ng-view>
 	
@@ -36,7 +41,10 @@
 
 
 <!-- jquery -->
+
+     
 <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+
 <!-- materialize -->
 
 <script type="text/javascript" src="/lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
@@ -44,12 +52,11 @@
 
 <!-- materialize javascrpt -->
 <script type="text/javascript" src="/lib/node_modules/angular/angular.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+
 
 <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
 
 
-<!-- <script type="text/javascript" src="/lib/node_modules/require.js/require.js"></script> -->
  <!-- app js -->
 <script type="text/javascript" src="app/app.js"></script>
 <!-- values -->
@@ -57,27 +64,21 @@
 <!-- factories -->
 
 <script type="text/javascript" src="app/factories/animationFactory.js"></script>
-
 <script type="text/javascript" src="app/factories/cardFactory.js"></script>
-
 <script type="text/javascript" src="app/factories/docFactory.js"></script>
-
 <script type="text/javascript" src="app/factories/filterFactory.js"></script>
-<script type="text/javascript" src="/app/factories/localFactory.js"></script>
+<script type="text/javascript" src="app/factories/localFactory.js"></script>
 <!-- services -->
-<script type="text/javascript" src="/app/services/fileSevice.js"></script>
+<script type="text/javascript" src="app/services/fileSevice.js"></script>
 
 <!-- directive  -->
-<script type="text/javascript" src="/app/directives/fileDirective.js"></script>
+<script type="text/javascript" src="app/directives/fileDirective.js"></script>
 <!-- controllers -->
-<script type="text/javascript" src="/app/controllers/deckListCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/deckListCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/cardCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/homeCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/deckCtrl.js"></script>
-<script type="text/javascript" src="app/controllers/loginCtrl.js"></script>
-
 <script type="text/javascript" src="app/controllers/navCtrl.js"></script>
-<script type="text/javascript" src="app/controllers/playCtrl.js"></script>
 
 </body>
 </html>

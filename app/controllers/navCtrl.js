@@ -41,12 +41,13 @@ initial();
 
 
 $scope.goToThisDeck = function(deckJunk){
-	console.log("whats up boo", typeof(deckJunk));
+	console.log("whats up boo", deckJunk);
 	LocalFactory.setCurrentDeck(deckJunk);
-	$window.location.href = "#!/decknameview/deckname"
+	// $window.location.href = "#!/decknameview/deckname";
+	
 
 
-}
+};
 
 
 

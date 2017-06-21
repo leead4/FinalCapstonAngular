@@ -92,7 +92,7 @@ let getCards = () => {
                 reject(error);
             });
         });
-    }
+    };
 
 return {getCards, postCard, getDecks, deleteCard, postDeck, getCardsInDeck, editCard};	
 

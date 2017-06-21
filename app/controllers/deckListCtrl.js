@@ -40,8 +40,9 @@ initial();
 $scope.deleteIt = function(cardId){
 	CardStorage.deleteCard(cardId);
 	console.log("cry in the corner");
+	$route.reload();
 
-}
+};
 
 $scope.editIt = function(card){
 	CardStorage.editCard(card)
@@ -51,7 +52,18 @@ $scope.editIt = function(card){
 	});
 	
 
-}
+};
+
+
+
+$scope.goToPlayView = function(){
+	let sleepyGary = LocalFactory.getCurrentDeck();
+	console.log("i need to get over sleepy gary", sleepyGary);
+	LocalFactory.setCurrentDeck(sleepyGary);
+	console.log("let's go brosef");
+	$window.location.href = "#!/cardview";
+
+};
 
 
 });
