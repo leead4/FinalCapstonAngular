@@ -17,6 +17,7 @@ app.controller("DeckCtrl", function($scope, $route, $document, $routeParams, $wi
     }); 
      
 
+
 	let intial = () => {
 		let myStuff = LocalFactory.getCurrentJSON();
 			$scope.myPandaPants = myStuff.semantic_roles;
@@ -46,6 +47,8 @@ app.controller("DeckCtrl", function($scope, $route, $document, $routeParams, $wi
 
 	intial();
 
+        
+
  $scope.cardObject = {
 
  };
@@ -53,6 +56,7 @@ app.controller("DeckCtrl", function($scope, $route, $document, $routeParams, $wi
 
 	$scope.saveThisCard = (bla, deckObj ) =>{
 
+		Materialize.toast('You saved it!', 500) // 4000 is the duration of the toast
 		console.log("stuff", bla, deckObj.id);
 
 

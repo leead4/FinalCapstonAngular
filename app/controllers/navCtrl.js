@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("NavCtrl", function($scope, $route, $document, $routeParams, $window, $location, LocalFactory, CardStorage){
+app.controller("NavCtrl", function($scope, $route, $rootScope, $document, $routeParams, $window, $location, LocalFactory, CardStorage){
 	$(document).ready(function(){
      
 	  $('.dropdown-button').dropdown({
@@ -16,9 +16,11 @@ app.controller("NavCtrl", function($scope, $route, $document, $routeParams, $win
   );
     });   
 
+// $scope.bla = false;
+
 	let initial = () => {
 		
-			
+			console.log("look at me go I'm runingin the navbar");
 			CardStorage.getDecks().then(function(data){
 				console.log(data);
 					let pantsArray = data.data;
@@ -32,9 +34,8 @@ app.controller("NavCtrl", function($scope, $route, $document, $routeParams, $win
 
 						}
 						// console.log(goodArray);
-						$scope.showMer = goodArray;
-
-});
+						$rootScope.showMer = goodArray;
+				});
 };
 
 initial();
@@ -43,11 +44,20 @@ initial();
 $scope.goToThisDeck = function(deckJunk){
 	console.log("whats up boo", deckJunk);
 	LocalFactory.setCurrentDeck(deckJunk);
-	// $window.location.href = "#!/decknameview/deckname";
-	
+	};
 
 
-};
+$scope.bla = $location.url();
+
+$scope.$watch('$rootScope.showMer',(x=true) =>{
+	console.log("hey gurl", x);
+    console.log($location.path());
+}, function(value){
+    console.log(value, 'blabla');
+});
+
+
+
 
 
 

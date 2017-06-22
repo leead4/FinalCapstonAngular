@@ -43,7 +43,8 @@ let getCards = () => {
 
     let postDeck = (newDeck) => {
         return $q((resolve, reject) => {
-            $http.post(`http://localhost:8000/decks`, 
+            console.log("blabla", newDeck);
+            $http.post(`http://localhost:8000/createdeck/`, 
             JSON.stringify(newDeck))
             .then((djangoStuff) => {
                  resolve(djangoStuff);
@@ -58,6 +59,18 @@ let getCards = () => {
         return $q((resolve, reject) => {
             console.log('blabla', cardId);
             $http.delete(`http://localhost:8000/deletethiscard/${cardId}/`)
+            .then((djangoStuff)=>{
+                resolve(djangoStuff);
+            })
+            .catch((error)=>{
+                reject(error);
+            });
+        });
+    };
+let deleteDeck = (deckId) => {
+        return $q((resolve, reject) => {
+            console.log('blabla', deckId);
+            $http.delete(`http://localhost:8000/deletethisdeck/${deckId}/`)
             .then((djangoStuff)=>{
                 resolve(djangoStuff);
             })
@@ -94,7 +107,7 @@ let getCards = () => {
         });
     };
 
-return {getCards, postCard, getDecks, deleteCard, postDeck, getCardsInDeck, editCard};	
+return {getCards, postCard, getDecks, deleteDeck, deleteCard, postDeck, getCardsInDeck, editCard};	
 
 
 

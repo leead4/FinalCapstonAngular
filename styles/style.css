@@ -1,45 +1,15 @@
-.flip-container {
-  /*perspective: 1000px;*/
+/*.flash {
+	height: auto;
+	width: 75%;
+}*/
+
+.logo{
+
+font-family: 'Nothing You Could Do', cursive;
 }
 
-.flip-container:hover .flipper,
-.flip-container.hover .flipper,
-.flip-container.flip .flipper {
-  transform: rotateY(180deg);
+.card-font{
+font-family: 'Caveat Brush', cursive;
+	
 }
 
-
-/* flip speed goes here */
-
-.flipper {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-
-/* hide back of pane during swap */
-
-.front,
-.back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-
-/* front pane, placed above back */
-
-.front {
-  z-index: 2;
-  /* for firefox 31 */
-  transform: rotateY(0deg);
-}
-
-
-/* back, initially hidden pane */
-
-.back {
-  transform: rotateY(180deg);
-}

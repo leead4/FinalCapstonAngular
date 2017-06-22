@@ -3,36 +3,38 @@
 <head>
 	<title>flashcards</title>
 <link rel="stylesheet" type="text/css" href="/lib/node_modules/materialize-css/dist/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- <link rel="stylesheet" type="text/css" href="styles/style.css"> -->
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Nothing+You+Could+Do" rel="stylesheet">
 
 </head>
-<body ng-app="FlashCards">
+<body class="light-green lighten-5" ng-app="FlashCards">
 
 
-    <ul id='dropdown1' class='dropdown-content' >
+    <ul id='dropdown1' class='dropdown-content'>
     <li ng-repeat="deck in showMer">
         <a ng-click="goToThisDeck(deck.id)" href="#!/decknameview/:{{deck.id}}">{{deck.name}}</a>
               </li>
     </ul>
 <nav class="z-depth-0">
-  <div class="nav-wrapper" ng-controller="NavCtrl">
-    
+  <div class="nav-wrapper teal darken-2" ng-controller="NavCtrl"> 
    <ul class="left hide-on-med-and-down">
-      <li><a href="#!/">Home</a></li>
-      
+      <li><a class="flow-text" href="#!/" ng-click="clickMe()">Home</a></li>
+      <li><a class="flow-text" href="#!/deckBuild">Make a Deck</a></li>
     <li>
-      <a class="dropdown-button" href="" data-activates="dropdown1">Dropdown</a></li>
+      <a class="dropdown-button flow-text" href="" data-activates="dropdown1">View Saved Decks</a>
+      </li>
+       <li> <a href="#" class="brand-logo center logo">Flashcards</a> </li>
 
     </ul>
-
-      
-    </ul> 
-   
     </div>
 </nav>
 
-
+<br>
+<br>
+<br>
+<br>
 <div class="container" ng-view>
 	
 </div>
@@ -75,6 +77,7 @@
 <script type="text/javascript" src="app/directives/fileDirective.js"></script>
 <!-- controllers -->
 <script type="text/javascript" src="app/controllers/deckListCtrl.js"></script>
+<script type="text/javascript" src="/app/controllers/deckBuildCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/cardCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/homeCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/deckCtrl.js"></script>

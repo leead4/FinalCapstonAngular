@@ -1,9 +1,8 @@
 "use strict";
 
 var app = angular.module('FlashCards', ['ngRoute']);
-$(document).ready(function(){
-      $('.carousel').carousel();
-    });
+
+ 
 
 app.config(function($routeProvider){
 	
@@ -19,6 +18,10 @@ app.config(function($routeProvider){
     .when('/deck', {
       templateUrl: 'partials/deck.html',
       controller: "DeckCtrl"
+    })
+    .when('/deckBuild', {
+      templateUrl: 'partials/deckBuild.html',
+      controller: "DeckBuildCtrl"
     }).
     when('/cardview', {
         templateUrl: 'partials/card.html',
