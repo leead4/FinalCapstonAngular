@@ -2,7 +2,7 @@
 
 app.controller("DeckCtrl", function($scope, $route, $document, $routeParams, $window, $location, CardStorage, LocalFactory){
 	 $(document).ready(function(){
-     
+     console.log("this is a dropdown");
 	  $('.dropdown-button').dropdown({
       inDuration: 300,
       outDuration: 225,
@@ -20,49 +20,39 @@ app.controller("DeckCtrl", function($scope, $route, $document, $routeParams, $wi
 
 	let intial = () => {
 		let myStuff = LocalFactory.getCurrentJSON();
-			$scope.myPandaPants = myStuff.semantic_roles;
-			// console.log("my pants", myStuff.semantic_roles);
-		
-			// let myDeckJunk = CardStorage.getDecks();
-			// console.log("the junk is here", myDeckJunk);
-			
-			CardStorage.getDecks().then(function(data){
-				console.log(data);
-					let pantsArray = data.data;
-						console.log("this", pantsArray.results);
-					let pandas = pantsArray.results;
-						// console.log(pandas);
-					let goodArray = [];
-						for (var i = 0; i < pandas.length; i++){
-							// console.log(pandas[i]);
-							goodArray.push(pandas[i]);
-
-						}
-						// console.log(goodArray);
-						$scope.showMe = goodArray;
-
-});
+		console.log("myStuff, currentJSON", myStuff);
+		$scope.currentLocalJSON = myStuff;
+		// $scope.myPandaPants = myStuff;
+		CardStorage.getDecks().then(function(data){
+			console.log("im the data ", data);
+			let deckPartialDeckArray = data.data;
+			// let pandas = pantsArray.results;
+			// let goodArray = [];
+			// for (var i = 0; i < pandas.length; i++){
+			// 	console.log("this is pandas", pandas[i]);
+			// 	goodArray.push(pandas[i]);
+			// }
+			$scope.showMe = deckPartialDeckArray;
+		});
 };
 
-
 	intial();
-
-        
 
  $scope.cardObject = {
 
  };
 
 
+
 	$scope.saveThisCard = (bla, deckObj ) =>{
+		console.log("I'm running, and I'm save this card", bla);
 
-		Materialize.toast('You saved it!', 500) // 4000 is the duration of the toast
-		console.log("stuff", bla, deckObj.id);
-
-
-		let front = bla.subject.text + " "+ bla.action.text;
-		let back = bla.object.text;
+		Materialize.toast('You saved it!', 500); // 4000 is the duration of the toast
+		// console.log("stuff", bla, deckObj.id);
+		let front = bla.left + " "+ bla.mid;
+		let back = bla.right;
 		let deck = deckObj;
+		console.log("this is what you are trying to save", deck.id);
 		let cardObject = {
 			"front" : front,
 			"back" : back,
@@ -77,6 +67,7 @@ app.controller("DeckCtrl", function($scope, $route, $document, $routeParams, $wi
 
 	};
 
+ 	
 	$scope.deleteThisCard = (cardId) =>{
 		console.log("heres the id", cardId);
 		CardStorage.deleteCard(cardId).then(function(stuff){

@@ -14,12 +14,12 @@
 
     <ul id='dropdown1' class='dropdown-content'>
     <li ng-repeat="deck in showMer">
-        <a ng-click="goToThisDeck(deck.id)" href="#!/decknameview/:{{deck.id}}">{{deck.name}}</a>
+        <a ng-click="goToThisDeck(deck)" href="#!/decknameview/:{{deck.id}}">{{deck.name}}</a>
               </li>
     </ul>
 <nav class="z-depth-0">
   <div class="nav-wrapper teal darken-2" ng-controller="NavCtrl"> 
-   <ul class="left hide-on-med-and-down">
+   <ul class="left">
       <li><a class="flow-text" href="#!/" ng-click="clickMe()">Home</a></li>
       <li><a class="flow-text" href="#!/deckBuild">Make a Deck</a></li>
     <li>

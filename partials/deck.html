@@ -1,27 +1,24 @@
 <div class="row">
 <h3 class="flow-text">Save your cards to a deck</h3>
-        <div class="col s12 m6" ng-repeat="blob in myPandaPants">
+        <div class="col s12 m6" ng-repeat="blob in currentLocalJSON">
           <div class="card teal lighten-5" ng-hide="blob{{$index}}">
             <div class="card-content grey-text text-darken-4">
-              <span class="card-title">{{blob.subject.text}}</span>
-              <span class="card-title">{{blob.action.text}}</span>
-              <span class="card-title">{{blob.object.text}}</span>
+              <span class="card-title">{{blob.left}}</span>
+              <span class="card-title">{{blob.mid}}</span>
+              <span class="card-title">{{blob.right}}</span>
           
   <div class="card-action">
               <!-- Dropdown Trigger -->
             <a href=""></a>
-            <a class='dropdown-button btn teal lighten-3 right' href='' onclick="Materialize.toast('I am a toast', 4000)" data-activates='demoDropdown{{$index}}' ng-click="openSesame()"> 
-
-            <i class="material-icons right">call_made</i>
-       
+            <a class='dropdown-button btn teal lighten-3 right' href=''  data-activates='demoDropdown{{$index}}'> 
+              <i class="material-icons right">call_made</i>
             </a>
-
             <!-- Dropdown Structure -->
             <ul id='demoDropdown{{$index}}' class='dropdown-content' >
-            <li ng-repeat="deck in showMe"><a class=" teal-text" href="" ng-click="saveThisCard(blob, deck)">{{deck.name}}</a></li>
-            </ul>
+            <li ng-repeat="deck in showMer"><a class="teal-text" href="" ng-click="saveThisCard(blob, deck)">{{deck.name}}</a></li>
             
-            </div>
+            </ul>
+  </div>
       </div>
           </div>
         

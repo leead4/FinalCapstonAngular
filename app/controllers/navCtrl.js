@@ -23,18 +23,18 @@ app.controller("NavCtrl", function($scope, $route, $rootScope, $document, $route
 			console.log("look at me go I'm runingin the navbar");
 			CardStorage.getDecks().then(function(data){
 				console.log(data);
-					let pantsArray = data.data;
-						console.log("this", pantsArray.results);
-					let pandas = pantsArray.results;
-						// console.log(pandas);
-					let goodArray = [];
-						for (var i = 0; i < pandas.length; i++){
-							// console.log(pandas[i]);
-							goodArray.push(pandas[i]);
+					let deckArray = data.data;
+						console.log("this what we got back from getDecks", deckArray);
+					// // let pandas = pantsArray.results;
+					// 	// console.log("this is the array.results", pandas);
+					// let goodArray = [];
+					// 	for (var i = 0; i < deckArray.length; i++){
+					// 		// console.log(pandas[i]);
+					// 		goodArray.push(deckArray[i]);
 
-						}
+					// 	}
 						// console.log(goodArray);
-						$rootScope.showMer = goodArray;
+						$rootScope.showMer = deckArray;
 				});
 };
 
@@ -50,10 +50,10 @@ $scope.goToThisDeck = function(deckJunk){
 $scope.bla = $location.url();
 
 $scope.$watch('$rootScope.showMer',(x=true) =>{
-	console.log("hey gurl", x);
-    console.log($location.path());
+	console.log("we are monitoring the value of x ", x);
+    console.log($location.path(), "this is the location path");
 }, function(value){
-    console.log(value, 'blabla');
+    console.log(value, 'We are watching for this value');
 });
 
 
