@@ -1,0 +1,22 @@
+/*.flash {
+	height: auto;
+	width: 75%;
+}*/
+
+.logo{
+
+font-family: 'Nothing You Could Do', cursive;
+}
+
+.card-font{
+font-family: 'Caveat Brush', cursive;
+	
+}
+
+.active-card {
+  background: pink !important;
+}
+.disabled {
+  background: #eee;
+  color: #aaa;
+}

@@ -1,0 +1,40 @@
+
+<h3 class="flow-text center-align">Read your cards!</h3>
+
+<div class="row">
+<h3>{{currentDeck}}</h3>
+ <div class="col s12 m6" ng-repeat="deck in showMe">
+
+<div class="card small  teal lighten-5">
+    <div class="card-image">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 input-field">
+        <i class="material-icons right">toc</i>
+      <br>
+        <textarea id="textarea{{$index}}" class="materialize-textarea" ng-model="deck.front" ng-disabled="!editableCards.includes(deck)" ></textarea>
+      </span>
+    </div>
+    <div class="card-reveal cyan lighten-5">
+      <span class="card-title grey-text text-darken-4">Answer<i class="material-icons right">close</i></span>
+      <span class="card-title text darken 4 input-field">
+        <textarea id="textareaTwo{{$index}}" class="materialize-textarea" ng-model="  deck.back" ng-disabled="!editableCards.includes(deck)"></textarea>
+      </span>
+      <br>
+      <br>
+      <br>
+      <a class="waves-effect waves-light btn right" ng-click="deleteIt(deck.id)">delete card</a>
+
+      <a class="waves-effect waves-light btn right" ng-click="editableCard(deck)" >editcard</a>
+
+      <a class="waves-effect waves-light btn right" ng-show="editableCards.includes(deck)" ng-click="saveChanges(deck)">saveChanges</a>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+  
+  <a class="waves-effect waves-light btn right" ng-click="deleteItAll(deckJunkId)">Burn it all down</a>
+
+         
